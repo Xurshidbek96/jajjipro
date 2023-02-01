@@ -1,7 +1,7 @@
 <ul class="sidebar-menu">
 
     <li class="dropdown @yield('dashboard')">
-      <a href="/a-panel" class="nav-link"><i data-feather="monitor"></i><span>Dashboard</span></a>
+      <a href="/admin/home" class="nav-link"><i data-feather="monitor"></i><span>Dashboard</span></a>
     </li>
     <li class="dropdown @yield('groups')">
         <a href="{{ route('groups.index') }}" ><i
