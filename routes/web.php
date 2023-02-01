@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PagesController;
 use App\Http\Controllers\Admin\TeacherController;
 use App\Http\Controllers\Admin\GroupController;
+use App\Http\Controllers\Admin\WinController;
 
 /*
 |--------------------------------------------------------------------------
@@ -35,5 +36,6 @@ Route::prefix('admin/')->group(function(){
 
     Route::resource('teachers', TeacherController::class);
     Route::resource('groups', GroupController::class);
+    Route::resource('wins', WinController::class);
 
 });

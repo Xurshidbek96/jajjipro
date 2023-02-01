@@ -11,5 +11,9 @@
       <a href="{{ route('teachers.index') }}" ><i
           data-feather="briefcase"></i><span>O'qituvchilar</span></a>
     </li>
+    <li class="dropdown @yield('wins')">
+        <a href="{{ route('wins.index') }}" ><i
+            data-feather="briefcase"></i><span>Yutuqlar</span></a>
+      </li>
 
 </ul>

@@ -4,10 +4,10 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use App\Models\Group;
-use App\Http\Requests\GroupStoreRequest;
+use App\Models\Win;
+use App\Http\Requests\WinStoreRequest;
 
-class GroupController extends Controller
+class WinController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -16,8 +16,8 @@ class GroupController extends Controller
      */
     public function index()
     {
-        $groups = Group::orderBy('id', 'DESC')->paginate(2);
-        return view('admin.groups.index', compact('groups'));
+        $wins = Win::orderBy('id', 'DESC')->paginate(5);
+        return view('admin.wins.index', compact('wins'));
     }
 
     /**
@@ -27,7 +27,7 @@ class GroupController extends Controller
      */
     public function create()
     {
-        return view('admin.groups.create');
+        return view('admin.wins.create');
     }
 
     /**
@@ -36,9 +36,8 @@ class GroupController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(GroupStoreRequest $request)
+    public function store(WinStoreRequest $request)
     {
-
         $requestData = $request->all();
 
         if($request->hasFile('img'))
@@ -49,8 +48,8 @@ class GroupController extends Controller
             $requestData['img'] = $imageName;
         }
 
-        Group::create($requestData);
-        return redirect()->route('groups.index')->with('success', 'Success done');
+        Win::create($requestData);
+        return redirect()->route('wins.index')->with('success', 'Success done');
     }
 
     /**
@@ -61,9 +60,9 @@ class GroupController extends Controller
      */
     public function show($id)
     {
-        $group = Group::find($id);
+        $win = Win::find($id);
 
-        return view('admin.groups.show', compact('group'));
+        return view('admin.wins.show', compact('win'));
     }
 
     /**
@@ -74,9 +73,9 @@ class GroupController extends Controller
      */
     public function edit($id)
     {
-        $group = Group::find($id);
+        $win = Win::find($id);
 
-        return view('admin.groups.edit', compact('group'));
+        return view('admin.wins.edit', compact('win'));
     }
 
     /**
@@ -92,9 +91,9 @@ class GroupController extends Controller
 
         if($request->hasFile('img'))
         {
-            $group = Group::find($id);
-            if(isset($group->img) && file_exists(public_path('/images/'.$group->img))){
-                unlink(public_path('/images/'.$group->img));
+            $win = Win::find($id);
+            if(isset($win->img) && file_exists(public_path('/images/'.$win->img))){
+                unlink(public_path('/images/'.$win->img));
             }
 
             $file = $request->file('img');
@@ -104,8 +103,8 @@ class GroupController extends Controller
 
         }
 
-        Group::find($id)->update($requestData);
-        return redirect()->route('groups.index')->with('success', 'Update done');
+        Win::find($id)->update($requestData);
+        return redirect()->route('wins.index')->with('success', 'Update done');
     }
 
     /**
@@ -116,7 +115,7 @@ class GroupController extends Controller
      */
     public function destroy($id)
     {
-        Group::find($id)->delete();
-        return redirect()->route('groups.index')->with('success', 'Delete done');
+        Win::find($id)->delete();
+        return redirect()->route('wins.index')->with('success', 'Delete done');
     }
 }
