@@ -5,6 +5,7 @@ use App\Http\Controllers\PagesController;
 use App\Http\Controllers\Admin\TeacherController;
 use App\Http\Controllers\Admin\GroupController;
 use App\Http\Controllers\Admin\WinController;
+use App\Http\Controllers\Admin\GalleryController;
 
 /*
 |--------------------------------------------------------------------------
@@ -37,5 +38,6 @@ Route::prefix('admin/')->group(function(){
     Route::resource('teachers', TeacherController::class);
     Route::resource('groups', GroupController::class);
     Route::resource('wins', WinController::class);
+    Route::resource('galleries', GalleryController::class);
 
 });

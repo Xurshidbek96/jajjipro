@@ -1,6 +1,6 @@
 @extends('admin.layouts.layout')
 
-@section('wins')
+@section('galleries')
 active
 @endsection
 
@@ -16,8 +16,8 @@ active
             @endif
           <div class="card">
             <div class="card-header">
-              <h4>Yutuqlar</h4>
-              <a href="{{ route('wins.create') }}" class="btn btn-primary" style="position:absolute; right:50;">Create</a>
+              <h4>Rasmlar</h4>
+              <a href="{{ route('galleries.create') }}" class="btn btn-primary" style="position:absolute; right:50;">Create</a>
             </div>
 
             <div class="card-body">
@@ -28,36 +28,34 @@ active
                       <th class="text-center">
                         #
                       </th>
-                      <th>Yutuq nomi</th>
                       <th>Ta'rif</th>
                       <th>Rasm</th>
                       <th>Action</th>
                     </tr>
                   </thead>
                   <tbody>
-                    @if (count($wins) == 0)
+                    @if (count($galleries) == 0)
 					    <tr>
 					        <td colspan="5" class="h5 text-center text-muted">Ma'lumot qo'shilmagan</td>
 					    </tr>
 					@endif
 
-                    @foreach($wins as $item)
+                    @foreach($galleries as $item)
                       <tr>
                         <td>
                           {{ ++$loop->index }}
                         </td>
-                        <td>{{ $item->name }}</td>
-                        <td>{!! $item->title !!}</td>
+                        <td>{{ $item->title }}</td>
+
                         <td>
                           <img alt="image" src="/images/{{ $item->img }}" width="59">
                         </td>
 
                         <td>
-                            <form action="{{ route('wins.destroy', $item->id) }}" method="POST">
+                            <form action="{{ route('galleries.destroy', $item->id) }}" method="POST">
                                 @csrf
                                 @method('DELETE')
-                            <a href="{{ route('wins.show', $item->id) }}" class="btn btn-info"><ion-icon class="fas fa-info-circle"></ion-icon></a>
-                            <a href="{{ route('wins.edit', $item->id) }}" class="btn btn-primary"><ion-icon class="far fa-edit"></ion-icon></a>
+                            <a href="{{ route('galleries.edit', $item->id) }}" class="btn btn-primary"><ion-icon class="far fa-edit"></ion-icon></a>
                             <button class="btn btn-danger" onclick="return confirm('Rostdan o`chirmoqchimisiz ?')"><ion-icon class="fas fa-times"></ion-icon></button>
                             </form>
                         </td>
@@ -67,7 +65,7 @@ active
 
                   </tbody>
                 </table>
-                {{ $wins->links('vendor.pagination.bootstrap-5') }}
+                {{ $galleries->links('vendor.pagination.bootstrap-5') }}
               </div>
             </div>
           </div>

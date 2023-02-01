@@ -115,6 +115,10 @@ class WinController extends Controller
      */
     public function destroy($id)
     {
+        $win = Win::find($id);
+        if(isset($win->img) && file_exists(public_path('/images/'.$win->img))){
+            unlink(public_path('/images/'.$win->img));
+        }
         Win::find($id)->delete();
         return redirect()->route('wins.index')->with('success', 'Delete done');
     }

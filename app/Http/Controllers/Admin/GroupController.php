@@ -16,7 +16,7 @@ class GroupController extends Controller
      */
     public function index()
     {
-        $groups = Group::orderBy('id', 'DESC')->paginate(2);
+        $groups = Group::orderBy('id', 'DESC')->paginate(5);
         return view('admin.groups.index', compact('groups'));
     }
 
@@ -116,6 +116,11 @@ class GroupController extends Controller
      */
     public function destroy($id)
     {
+        $group = Group::find($id);
+        if(isset($group->img) && file_exists(public_path('/images/'.$group->img))){
+            unlink(public_path('/images/'.$group->img));
+        }
+
         Group::find($id)->delete();
         return redirect()->route('groups.index')->with('success', 'Delete done');
     }

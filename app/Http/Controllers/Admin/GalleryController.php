@@ -3,12 +3,11 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
-use App\Models\Teacher;
+use App\Models\Gallery;
 use Illuminate\Http\Request;
-use App\Http\Requests\TeacherStoreRequest;
+use App\Http\Requests\GalleryStoreRequest;
 
-
-class TeacherController extends Controller
+class GalleryController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -17,8 +16,8 @@ class TeacherController extends Controller
      */
     public function index()
     {
-        $teachers = Teacher::orderBy('id', 'DESC')->paginate(5);
-        return view('admin.teachers.index', compact('teachers'));
+        $galleries = Gallery::orderBy('id', 'DESC')->paginate(5);
+        return view('admin.galleries.index', compact('galleries'));
     }
 
     /**
@@ -28,7 +27,7 @@ class TeacherController extends Controller
      */
     public function create()
     {
-        return view('admin.teachers.create');
+        return view('admin.galleries.create');
     }
 
     /**
@@ -37,7 +36,7 @@ class TeacherController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(TeacherStoreRequest $request)
+    public function store(GalleryStoreRequest $request)
     {
         $requestData = $request->all();
 
@@ -46,57 +45,53 @@ class TeacherController extends Controller
             $file = $request->file('img');
             $imageName = time().'-'.$file->getClientOriginalName();
             $file->move('images/', $imageName);
-
             $requestData['img'] = $imageName;
         }
 
-        Teacher::create($requestData);
-        return redirect()->route('teachers.index')->with('success', 'Success done');
+        Gallery::create($requestData);
+        return redirect()->route('galleries.index')->with('success', 'Success done');
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\Teacher  $teacher
+     * @param  \App\Models\odel  $odel
      * @return \Illuminate\Http\Response
      */
     public function show($id)
     {
-        $teacher = Teacher::find($id);
-
-        return view('admin.teachers.show', compact('teacher'));
+        //
     }
 
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\Teacher  $teacher
+     * @param  \App\Models\odel  $odel
      * @return \Illuminate\Http\Response
      */
     public function edit($id)
     {
-        $teacher = Teacher::find($id);
+        $gallery = Gallery::find($id);
 
-        return view('admin.teachers.edit', compact('teacher'));
+        return view('admin.galleries.edit', compact('gallery'));
     }
 
     /**
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Teacher  $teacher
+     * @param  \App\Models\odel  $odel
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, $id)
     {
         $requestData = $request->all();
 
-
         if($request->hasFile('img'))
         {
-            $teacher = Teacher::find($id);
-            if(isset($teacher->img) && file_exists(public_path('/images/'.$teacher->img))){
-                unlink(public_path('/images/'.$teacher->img));
+            $gallery = Gallery::find($id);
+            if(isset($gallery->img) && file_exists(public_path('/images/'.$gallery->img))){
+                unlink(public_path('/images/'.$gallery->img));
             }
 
             $file = $request->file('img');
@@ -106,23 +101,24 @@ class TeacherController extends Controller
 
         }
 
-        Teacher::find($id)->update($requestData);
-        return redirect()->route('teachers.index')->with('success', 'Update done');
+        Gallery::find($id)->update($requestData);
+        return redirect()->route('galleries.index')->with('success', 'Update done');
     }
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\Teacher  $teacher
+     * @param  \App\Models\odel  $odel
      * @return \Illuminate\Http\Response
      */
     public function destroy($id)
     {
-        $teacher = Teacher::find($id);
-        if(isset($teacher->img) && file_exists(public_path('/images/'.$teacher->img))){
-            unlink(public_path('/images/'.$teacher->img));
+        $gallery = Gallery::find($id);
+        if(isset($gallery->img) && file_exists(public_path('/images/'.$gallery->img))){
+            unlink(public_path('/images/'.$gallery->img));
         }
-        Teacher::find($id)->delete();
-        return redirect()->route('teachers.index')->with('success', 'Delete done');
+
+        Gallery::find($id)->delete();
+        return redirect()->route('galleries.index')->with('success', 'Delete done');
     }
 }

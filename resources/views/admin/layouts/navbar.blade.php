@@ -14,6 +14,10 @@
     <li class="dropdown @yield('wins')">
         <a href="{{ route('wins.index') }}" ><i
             data-feather="briefcase"></i><span>Yutuqlar</span></a>
-      </li>
+    </li>
+    <li class="dropdown @yield('galleries')">
+        <a href="{{ route('galleries.index') }}" ><i
+            data-feather="briefcase"></i><span>Galereya</span></a>
+    </li>
 
 </ul>
