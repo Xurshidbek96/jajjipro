@@ -5,6 +5,8 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use App\Models\Teacher;
 use Illuminate\Http\Request;
+use App\Http\Requests\TeacherStoreRequest;
+
 
 class TeacherController extends Controller
 {
@@ -35,7 +37,7 @@ class TeacherController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(TeacherStoreRequest $request)
     {
         $requestData = $request->all();
 

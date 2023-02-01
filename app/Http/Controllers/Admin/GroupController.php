@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Group;
+use App\Http\Requests\GroupStoreRequest;
 
 class GroupController extends Controller
 {
@@ -35,9 +36,9 @@ class GroupController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(GroupStoreRequest $request)
     {
-        // return $request ;
+
         $requestData = $request->all();
 
         if($request->hasFile('img'))
@@ -45,7 +46,6 @@ class GroupController extends Controller
             $file = $request->file('img');
             $imageName = time().'-'.$file->getClientOriginalName();
             $file->move('images/', $imageName);
-
             $requestData['img'] = $imageName;
         }
 

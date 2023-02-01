@@ -34,42 +34,45 @@
               <div class="form-group row mb-4">
                 <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3">Nomi</label>
                 <div class="col-sm-12 col-md-7">
-                  <input type="text" class="form-control" name="name">
+                  <input type="text" class="form-control" name="name" value="{{ old('name') }}">
+                   @error('name') <div class="alert alert-danger">{{ $message }}</div> @enderror
                 </div>
               </div>
 
               <div class="form-group row mb-4">
                 <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3">Ta'rif</label>
                 <div class="col-sm-12 col-md-7">
-                  <textarea class="summernote" name="title"></textarea>
+                  <textarea class="summernote" name="title" value="{{ old('title') }}">{{ old('title') }}</textarea>
                 </div>
               </div>
 
               <div class="form-group row mb-4">
                 <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3">Yosh</label>
                 <div class="col-sm-12 col-md-7">
-                  <input type="text" class="form-control" name="age">
+                  <input type="text" class="form-control" name="age" value="{{ old('age') }}">
+                  @error('age') <div class="alert alert-danger">{{ $message }}</div> @enderror
                 </div>
               </div>
 
               <div class="form-group row mb-4">
                 <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3">Joylar soni</label>
                 <div class="col-sm-12 col-md-7">
-                  <input type="number" class="form-control" name="seat">
+                  <input type="number" class="form-control" name="seat" value="{{ old('seat') }}">
+                  @error('seat') <div class="alert alert-danger">{{ $message }}</div> @enderror
                 </div>
               </div>
 
               <div class="form-group row mb-4">
                 <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3">Dars vaqti</label>
                 <div class="col-sm-12 col-md-7">
-                  <input type="text" class="form-control" name="time">
+                  <input type="text" class="form-control" name="time" value="{{ old('time') }}">
                 </div>
               </div>
 
               <div class="form-group row mb-4">
                 <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3">To'lov miqdori(so'm)</label>
                 <div class="col-sm-12 col-md-7">
-                  <input type="number" class="form-control" name="payment">
+                  <input type="number" class="form-control" name="payment" value="{{ old('payment') }}">
                 </div>
               </div>
 
@@ -80,6 +83,7 @@
                     <label for="image-upload" id="image-label">Rasmni tanlang</label>
                     <input type="file" name="img" id="image-upload" />
                   </div>
+                  @error('img') <div class="alert alert-danger">{{ $message }}</div> @enderror
                 </div>
               </div>
 
