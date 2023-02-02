@@ -94,10 +94,7 @@ class TeacherController extends Controller
 
         if($request->hasFile('img'))
         {
-            $teacher = Teacher::find($id);
-            if(isset($teacher->img) && file_exists(public_path('/images/'.$teacher->img))){
-                unlink(public_path('/images/'.$teacher->img));
-            }
+            $this->unlink_file($id);
 
             $file = $request->file('img');
             $imageName = time().'-'.$file->getClientOriginalName();
@@ -118,11 +115,16 @@ class TeacherController extends Controller
      */
     public function destroy($id)
     {
+        $this->unlink_file($id);
+        Teacher::find($id)->delete();
+        return redirect()->route('teachers.index')->with('success', 'Delete done');
+    }
+
+    // extra functions
+    public function unlink_file($id){
         $teacher = Teacher::find($id);
         if(isset($teacher->img) && file_exists(public_path('/images/'.$teacher->img))){
             unlink(public_path('/images/'.$teacher->img));
         }
-        Teacher::find($id)->delete();
-        return redirect()->route('teachers.index')->with('success', 'Delete done');
     }
 }

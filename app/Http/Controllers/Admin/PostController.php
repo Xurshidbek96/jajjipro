@@ -4,10 +4,11 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use App\Models\Group;
-use App\Http\Requests\GroupStoreRequest;
+use App\Models\Category;
+use App\Models\Post;
+use App\Http\Requests\PostStoreRequest;
 
-class GroupController extends Controller
+class PostController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -16,8 +17,8 @@ class GroupController extends Controller
      */
     public function index()
     {
-        $groups = Group::orderBy('id', 'DESC')->paginate(5);
-        return view('admin.groups.index', compact('groups'));
+        $posts = Post::orderBy('id', 'DESC')->paginate(5);
+        return view('admin.posts.index', compact('posts'));
     }
 
     /**
@@ -27,7 +28,8 @@ class GroupController extends Controller
      */
     public function create()
     {
-        return view('admin.groups.create');
+        $categories = Category::all();
+        return view('admin.posts.create', compact('categories'));
     }
 
     /**
@@ -36,7 +38,7 @@ class GroupController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(GroupStoreRequest $request)
+    public function store(PostStoreRequest $request)
     {
         $requestData = $request->all();
 
@@ -44,12 +46,13 @@ class GroupController extends Controller
         {
             $file = $request->file('img');
             $imageName = time().'-'.$file->getClientOriginalName();
-            $imagePath = $file->move('images/', $imageName);
+            $file->move('images/', $imageName);
+
             $requestData['img'] = $imageName;
         }
 
-        Group::create($requestData);
-        return redirect()->route('groups.index')->with('success', 'Success done');
+        Post::create($requestData);
+        return redirect()->route('posts.index')->with('success', 'Success done');
     }
 
     /**
@@ -60,9 +63,9 @@ class GroupController extends Controller
      */
     public function show($id)
     {
-        $group = Group::find($id);
+        $post = Post::find($id);
 
-        return view('admin.groups.show', compact('group'));
+        return view('admin.posts.show', compact('post'));
     }
 
     /**
@@ -73,9 +76,10 @@ class GroupController extends Controller
      */
     public function edit($id)
     {
-        $group = Group::find($id);
+        $categories = Category::all();
+        $post = Post::find($id);
 
-        return view('admin.groups.edit', compact('group'));
+        return view('admin.posts.edit', compact('post', 'categories'));
     }
 
     /**
@@ -89,17 +93,20 @@ class GroupController extends Controller
     {
         $requestData = $request->all();
 
+
         if($request->hasFile('img'))
         {
             $this->unlink_file($id);
+
             $file = $request->file('img');
             $imageName = time().'-'.$file->getClientOriginalName();
             $imagePath = $file->move('images/', $imageName);
             $requestData['img'] = $imageName;
+
         }
 
-        Group::find($id)->update($requestData);
-        return redirect()->route('groups.index')->with('success', 'Update done');
+        Post::find($id)->update($requestData);
+        return redirect()->route('posts.index')->with('success', 'Update done');
     }
 
     /**
@@ -111,17 +118,16 @@ class GroupController extends Controller
     public function destroy($id)
     {
         $this->unlink_file($id);
+        Post::find($id)->delete();
 
-        Group::find($id)->delete();
-        return redirect()->route('groups.index')->with('success', 'Delete done');
+        return redirect()->route('posts.index')->with('success', 'Delete done');
     }
 
     // extra functions
     public function unlink_file($id){
-        $group = Group::find($id);
-        if(isset($group->img) && file_exists(public_path('/images/'.$group->img))){
-            unlink(public_path('/images/'.$group->img));
+        $post = Post::find($id);
+        if(isset($post->img) && file_exists(public_path('/images/'.$post->img))){
+            unlink(public_path('/images/'.$post->img));
         }
     }
-
 }

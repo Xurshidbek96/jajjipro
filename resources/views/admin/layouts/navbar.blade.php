@@ -19,5 +19,13 @@
         <a href="{{ route('galleries.index') }}" ><i
             data-feather="briefcase"></i><span>Galereya</span></a>
     </li>
+    <li class="dropdown @yield('categories')">
+        <a href="{{ route('categories.index') }}" ><i
+            data-feather="briefcase"></i><span>Kategoriyalar</span></a>
+    </li>
+    <li class="dropdown @yield('posts')">
+        <a href="{{ route('posts.index') }}" ><i
+            data-feather="briefcase"></i><span>Maqolalar</span></a>
+    </li>
 
 </ul>

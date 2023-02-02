@@ -44,7 +44,7 @@ class GalleryController extends Controller
         {
             $file = $request->file('img');
             $imageName = time().'-'.$file->getClientOriginalName();
-            $file->move('images/', $imageName);
+            $imagePath = $file->move('images/', $imageName);
             $requestData['img'] = $imageName;
         }
 
@@ -89,11 +89,7 @@ class GalleryController extends Controller
 
         if($request->hasFile('img'))
         {
-            $gallery = Gallery::find($id);
-            if(isset($gallery->img) && file_exists(public_path('/images/'.$gallery->img))){
-                unlink(public_path('/images/'.$gallery->img));
-            }
-
+            $this->unlink_file($id);
             $file = $request->file('img');
             $imageName = time().'-'.$file->getClientOriginalName();
             $imagePath = $file->move('images/', $imageName);
@@ -113,12 +109,16 @@ class GalleryController extends Controller
      */
     public function destroy($id)
     {
+        $this->unlink_file($id);
+        Gallery::find($id)->delete();
+        return redirect()->route('galleries.index')->with('success', 'Delete done');
+    }
+
+    // extra functions
+    public function unlink_file($id){
         $gallery = Gallery::find($id);
         if(isset($gallery->img) && file_exists(public_path('/images/'.$gallery->img))){
             unlink(public_path('/images/'.$gallery->img));
         }
-
-        Gallery::find($id)->delete();
-        return redirect()->route('galleries.index')->with('success', 'Delete done');
     }
 }

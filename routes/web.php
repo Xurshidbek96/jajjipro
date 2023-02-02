@@ -6,6 +6,8 @@ use App\Http\Controllers\Admin\TeacherController;
 use App\Http\Controllers\Admin\GroupController;
 use App\Http\Controllers\Admin\WinController;
 use App\Http\Controllers\Admin\GalleryController;
+use App\Http\Controllers\Admin\CategoryController;
+use App\Http\Controllers\Admin\PostController;
 
 /*
 |--------------------------------------------------------------------------
@@ -39,5 +41,7 @@ Route::prefix('admin/')->group(function(){
     Route::resource('groups', GroupController::class);
     Route::resource('wins', WinController::class);
     Route::resource('galleries', GalleryController::class);
+    Route::resource('categories', CategoryController::class);
+    Route::resource('posts', PostController::class);
 
 });
