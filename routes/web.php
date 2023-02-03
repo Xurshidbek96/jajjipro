@@ -8,6 +8,8 @@ use App\Http\Controllers\Admin\WinController;
 use App\Http\Controllers\Admin\GalleryController;
 use App\Http\Controllers\Admin\CategoryController;
 use App\Http\Controllers\Admin\PostController;
+use App\Http\Controllers\Admin\HumanController;
+use App\Http\Controllers\Admin\NumberController;
 
 /*
 |--------------------------------------------------------------------------
@@ -43,5 +45,7 @@ Route::prefix('admin/')->group(function(){
     Route::resource('galleries', GalleryController::class);
     Route::resource('categories', CategoryController::class);
     Route::resource('posts', PostController::class);
+    Route::resource('humans', HumanController::class);
+    Route::resource('numbers', NumberController::class);
 
 });

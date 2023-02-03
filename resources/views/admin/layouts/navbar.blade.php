@@ -27,5 +27,17 @@
         <a href="{{ route('posts.index') }}" ><i
             data-feather="briefcase"></i><span>Maqolalar</span></a>
     </li>
+    <li class="dropdown">
+        <a href="#" ><i
+            data-feather="briefcase"></i><span></span></a>
+    </li>
+    <li class="dropdown @yield('numbers')">
+        <a href="{{ route('numbers.index') }}" ><i
+            data-feather="briefcase"></i><span>Raqamlar</span></a>
+    </li>
+    <li class="dropdown @yield('humans')">
+        <a href="{{ route('humans.index') }}" ><i
+            data-feather="briefcase"></i><span>Mijozlar</span></a>
+    </li>
 
 </ul>

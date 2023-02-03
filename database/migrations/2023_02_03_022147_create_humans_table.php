@@ -15,6 +15,8 @@ return new class extends Migration
     {
         Schema::create('humans', function (Blueprint $table) {
             $table->id();
+            $table->string('name')->nullable();
+            $table->bigInteger('number_id')->nullable();
             $table->timestamps();
         });
     }

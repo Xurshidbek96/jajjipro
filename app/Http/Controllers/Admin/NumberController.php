@@ -1,10 +1,12 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Admin;
 
+use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use App\Models\Number;
 
-class HumanController extends Controller
+class NumberController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -13,7 +15,8 @@ class HumanController extends Controller
      */
     public function index()
     {
-        //
+        $numbers = Number::orderBy('id', 'DESC')->paginate(5);
+        return view('admin.numbers.index', compact('numbers'));
     }
 
     /**
@@ -23,7 +26,7 @@ class HumanController extends Controller
      */
     public function create()
     {
-        //
+        return view('admin.numbers.create');
     }
 
     /**
@@ -34,7 +37,8 @@ class HumanController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        Number::create($request->all());
+        return redirect()->route('numbers.index')->with('success', 'Success done');
     }
 
     /**
@@ -56,7 +60,9 @@ class HumanController extends Controller
      */
     public function edit($id)
     {
-        //
+        $number = Number::find($id);
+
+        return view('admin.numbers.edit', compact('number'));
     }
 
     /**
@@ -68,7 +74,8 @@ class HumanController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        Number::find($id)->update($request->all());
+        return redirect()->route('numbers.index')->with('success', 'Update done');
     }
 
     /**
@@ -79,6 +86,7 @@ class HumanController extends Controller
      */
     public function destroy($id)
     {
-        //
+        Number::find($id)->delete();
+        return redirect()->route('numbers.index')->with('success', 'Delete done');
     }
 }
