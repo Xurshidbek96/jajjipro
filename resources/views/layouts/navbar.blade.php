@@ -12,19 +12,19 @@
 
         <div class="collapse navbar-collapse justify-content-between" id="navbarCollapse">
             <div class="navbar-nav font-weight-bold mx-auto py-0">
-                <a href="/" class="nav-item nav-link @yield('home')">Bosh sahifa</a>
+                <a href="/" class="nav-item nav-link @yield('home')">@lang('words.home')</a>
                 <!-- <a href="about.html" class="nav-item nav-link">About</a> -->
-                <a href="/front/groups" class="nav-item nav-link @yield('groups')">Sinflar</a>
-                <a href="/front/teachers" class="nav-item nav-link @yield('teachers')">O'qituvchilar</a>
-                <a href="/front/wins" class="nav-item nav-link @yield('wins')">Yutuqlar</a>
-                <a href="/front/gallery" class="nav-item nav-link @yield('gallery')">Galereya</a>
-                <a href="/front/blogs" class="nav-item nav-link @yield('blogs')">Maqolalar</a>
-                <a href="/front/contact" class="nav-item nav-link @yield('contact')">Aloqa</a>
+                <a href="/front/groups" class="nav-item nav-link @yield('groups')">@lang('words.groups')</a>
+                <a href="/front/teachers" class="nav-item nav-link @yield('teachers')">@lang('words.teachers')</a>
+                <a href="/front/wins" class="nav-item nav-link @yield('wins')">@lang('words.wins')</a>
+                <a href="/front/gallery" class="nav-item nav-link @yield('gallery')">@lang('words.gallery')</a>
+                <a href="/front/blogs" class="nav-item nav-link @yield('blogs')">@lang('words.blogs')</a>
+                <a href="/front/contact" class="nav-item nav-link @yield('contact')">@lang('words.contact')</a>
             </div>
             </div>
-            <a class="btn btn-primaryy px-4" href="Uzb"><img style="padding: 3px;" src="/assets/img/Uzbekistan-Flag-icon.png" width="35" height="35" alt="lorem"></a>
-            <a class="btn btn-primaryy px-4" href="Uzb"><img style="padding: 3px;" src="/assets/img/united-states-of-america-flag-png-xl.png" width="35" height="35" alt="lorem"></a>
-            <a class="btn btn-primaryy px-4" href="Uzb"><img style="padding: 3px;" src="/assets/img/Russia-flag.png" width="35" height="35" alt="lorem"></a>
+            <a class="btn btn-primaryy px-4" href="/lang/uz"><img style="padding: 3px;" src="/assets/img/Uzbekistan-Flag-icon.png" width="35" height="35" alt="lorem"></a>
+            <a class="btn btn-primaryy px-4" href="/lang/ru"><img style="padding: 3px;" src="/assets/img/united-states-of-america-flag-png-xl.png" width="35" height="35" alt="lorem"></a>
+            <a class="btn btn-primaryy px-4" href="/lang/en"><img style="padding: 3px;" src="/assets/img/Russia-flag.png" width="35" height="35" alt="lorem"></a>
             <!-- <a  href="tel:+998996111300" class="btn btn-primary px-4"><img src="/assets/img/missed-call.png" width="35" height="35" alt="lorem">  Qong'iroq qiling</a> -->
         </div>
     </nav>

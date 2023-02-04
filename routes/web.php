@@ -33,6 +33,11 @@ Route::prefix('front/')->group(function () {
     Route::get('/contact', [PagesController::class, 'contact']);
 });
 
+Route::get('lang/{lang}', function($lang){
+    session(['lang' => $lang]);
+    return back();
+});
+
 Route::prefix('admin/')->group(function(){
 
     Route::get('home', function(){
