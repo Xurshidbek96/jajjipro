@@ -9,7 +9,7 @@
     <div class="row align-items-center px-3">
         <div class="col-lg-6 text-center text-lg-left">
             <h4 class="text-white mb-4 mt-5 mt-lg-0">Shavkat Mirziyoyev:</h4>
-            <h1 class="display-3 font-weight-bold text-white">"Maktabgacha ta'lim sohasida zamonaviy tizim yaratish muhim vazifamizdir"</h1>
+            <h1 class="display-3 font-weight-bold text-white">"@lang('welcome.header')"</h1>
             <!-- <p class="text-white mb-4">Sea ipsum kasd eirmod kasd magna, est sea et diam ipsum est amet sed sit.
                 Ipsum dolor no justo dolor et, lorem ut dolor erat dolore sed ipsum at ipsum nonumy amet. Clita
                 lorem dolore sed stet et est justo dolore.</p> -->
@@ -36,11 +36,9 @@
                 <img class="img-fluid rounded mb-5 mb-lg-0" src="/assets/img/about-1.jpg" alt="">
             </div>
             <div class="col-lg-7">
-                <p class="section-title pr-5"><span class="pr-2">So'nggi maqola</span></p>
-                <h1 class="mb-4">Farzandlaringiz uchun eng yaxshi maktab</h1>
-                <p>Invidunt lorem justo sanctus clita. Erat lorem labore ea, justo dolor lorem ipsum ut sed eos,
-                    ipsum et dolor kasd sit ea justo. Erat justo sed sed diam. Ea et erat ut sed diam sea ipsum est
-                    dolor</p>
+                <p class="section-title pr-5"><span class="pr-2">@lang('welcome.last_article')</span></p>
+                <h1 class="mb-4">@lang('welcome.title')</h1>
+                <p>@lang('welcome.info')</p>
             </div>
         </div>
     </div>

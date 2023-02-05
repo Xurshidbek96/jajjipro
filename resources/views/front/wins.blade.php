@@ -7,11 +7,11 @@
 <!-- Header Start -->
 <div class="container-fluid bg-primary mb-5">
     <div class="d-flex flex-column align-items-center justify-content-center" style="min-height: 400px">
-        <h3 class="display-3 font-weight-bold text-white">Bizni yutuqlarimiz</h3>
+        <h3 class="display-3 font-weight-bold text-white">@lang('words.win1')</h3>
         <div class="d-inline-flex text-white">
-            <p class="m-0"><a class="text-white" href="/">Bosh sahifa</a></p>
+            <p class="m-0"><a class="text-white" href="/">@lang('words.home')</a></p>
             <p class="m-0 px-2">/</p>
-            <p class="m-0">Yutuqlar</p>
+            <p class="m-0">@lang('words.wins')</p>
         </div>
     </div>
 </div>
@@ -20,8 +20,8 @@
 <div class="container-fluid pt-5">
     <div class="container">
         <div class="text-center pb-2">
-            <p class="section-title px-5"><span class="px-2">BOG'CHA HAYOTI</span></p>
-            <h1 class="mb-4">So'nggi Yutuqlar</h1>
+            <p class="section-title px-5"><span class="px-2">@lang('words.win2')</span></p>
+            <h1 class="mb-4">@lang('words.win3')</h1>
         </div>
         <div class="row pb-3">
             <div class="col-lg-4 mb-4">

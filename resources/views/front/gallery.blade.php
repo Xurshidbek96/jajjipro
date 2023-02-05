@@ -7,11 +7,11 @@
 <!-- Header Start -->
 <div class="container-fluid bg-primary mb-5">
     <div class="d-flex flex-column align-items-center justify-content-center" style="min-height: 400px">
-        <h3 class="display-3 font-weight-bold text-white">Galereya</h3>
+        <h3 class="display-3 font-weight-bold text-white">@lang('words.gallery')</h3>
         <div class="d-inline-flex text-white">
-            <p class="m-0"><a class="text-white" href="index.html">Bosh sahifa</a></p>
+            <p class="m-0"><a class="text-white" href="/">@lang('words.home')</a></p>
             <p class="m-0 px-2">/</p>
-            <p class="m-0">Galereya</p>
+            <p class="m-0">@lang('words.gallery')</p>
         </div>
     </div>
 </div>
@@ -22,8 +22,8 @@
 <div class="container-fluid pt-5 pb-3">
     <div class="container">
         <div class="text-center pb-2">
-            <p class="section-title px-5"><span class="px-2">Bizning galereyamiz</span></p>
-            <h1 class="mb-4">Bizning bolajonlarimiz</h1>
+            <p class="section-title px-5"><span class="px-2">@lang('words.g1')</span></p>
+            <h1 class="mb-4">@lang('words.g2')</h1>
         </div>
         <!-- <div class="row">
             <div class="col-12 text-center mb-2">

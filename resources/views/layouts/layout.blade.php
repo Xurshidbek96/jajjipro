@@ -58,11 +58,11 @@
             </div>
         </div>
         <div class="col-lg-3 col-md-6 mb-5">
-            <h3 class="text-primary mb-4">Aloqa</h3>
+            <h3 class="text-primary mb-4">@lang('words.contact')</h3>
             <div class="d-flex">
                 <h4 class="fa fa-map-marker-alt text-primary"></h4>
                 <div class="pl-3">
-                    <h5 class="text-white">Manzil:</h5>
+                    <h5 class="text-white">@lang('words.adress'):</h5>
                     <p>Nomongoniy 25-uy, 1600007</p>
                 </div>
             </div>
@@ -76,41 +76,41 @@
             <div class="d-flex">
                 <h4 class="fa fa-phone-alt text-primary"></h4>
                 <div class="pl-3">
-                    <h5 class="text-white">Telefon</h5>
+                    <h5 class="text-white">@lang('words.phone')</h5>
                     <p>+998996111300</p>
                 </div>
             </div>
         </div>
         <div class="col-lg-3 col-md-6 mb-5">
-            <h3 class="text-primary mb-4">Tezkor havolalar</h3>
+            <h3 class="text-primary mb-4">@lang('words.links')</h3>
             <div class="d-flex flex-column justify-content-start">
-                <a class="text-white mb-2" href="/"><i class="fa fa-angle-right mr-2"></i>Bosh sahifa</a>
-                <a class="text-white mb-2" href="/front/groups"><i class="fa fa-angle-right mr-2"></i>Sinflar</a>
-                <a class="text-white mb-2" href="/front/teachers"><i class="fa fa-angle-right mr-2"></i>O'qituvchilar</a>
-                <a class="text-white mb-2" href="/front/gallery"><i class="fa fa-angle-right mr-2"></i>Galereya</a>
-                <a class="text-white mb-2" href="/front/blogs"><i class="fa fa-angle-right mr-2"></i>Maqolalar</a>
-                <a class="text-white" href="#"><i class="fa fa-angle-right mr-2"></i>Aloqa</a>
+                <a class="text-white mb-2" href="/"><i class="fa fa-angle-right mr-2"></i>@lang('words.home')</a>
+                <a class="text-white mb-2" href="/front/groups"><i class="fa fa-angle-right mr-2"></i>@lang('words.group')</a>
+                <a class="text-white mb-2" href="/front/teachers"><i class="fa fa-angle-right mr-2"></i>@lang('words.teachers')</a>
+                <a class="text-white mb-2" href="/front/gallery"><i class="fa fa-angle-right mr-2"></i>@lang('words.gallery')</a>
+                <a class="text-white mb-2" href="/front/blogs"><i class="fa fa-angle-right mr-2"></i>@lang('words.blogs')</a>
+                <a class="text-white" href="#"><i class="fa fa-angle-right mr-2"></i>@lang('words.contact')</a>
             </div>
         </div>
         <div class="col-lg-3 col-md-6 mb-5">
-            <h3 class="text-primary mb-4">Shikoyat</h3>
+            <h3 class="text-primary mb-4">@lang('words.complaint')</h3>
             <form action="">
                 <div class="form-group">
-                    <input type="text" class="form-control border-0 py-4" placeholder="Ismingiz" required="required" />
+                    <input type="text" class="form-control border-0 py-4" placeholder="@lang('words.name')" required="required" />
                 </div>
                 <div class="form-group">
-                    <input type="text" class="form-control border-0 py-4" placeholder="Shikoyatni yozing"
+                    <input type="text" class="form-control border-0 py-4" placeholder="@lang('words.text')"
                         required="required" />
                 </div>
                 <div>
-                    <button class="btn btn-primary btn-block border-0 py-3" type="submit">Yuborish</button>
+                    <button class="btn btn-primary btn-block border-0 py-3" type="submit">@lang('words.send')</button>
                 </div>
             </form>
         </div>
     </div>
     <div class="container-fluid pt-5" style="border-top: 1px solid rgba(23, 162, 184, .2);;">
         <p class="m-0 text-center text-white">
-            &copy; <a class="text-primary font-weight-bold" href="index.html">Jajji Professor</a>. Barcha huquqlar himoyalangan.
+            &copy; <a class="text-primary font-weight-bold" href="index.html">Jajji Professor</a>. @lang('words.safe') .
             <a class="text-primary font-weight-bold" href="https://htmlcodex.com">IT RISE UP</a>
         </p>
     </div>
