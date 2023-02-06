@@ -39,11 +39,11 @@ Route::get('lang/{lang}', function($lang){
     return back();
 });
 
-Route::prefix('admin/')->group(function(){
+Route::prefix('admin/')->middleware(['auth'])->group(function(){
 
     Route::get('home', function(){
         return view('admin.layouts.dashboard');
-    });
+    })->name('admin.home');
 
     Route::resource('teachers', TeacherController::class);
     Route::resource('groups', GroupController::class);
@@ -56,3 +56,7 @@ Route::prefix('admin/')->group(function(){
     Route::resource('comments', CommentController::class);
 
 });
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

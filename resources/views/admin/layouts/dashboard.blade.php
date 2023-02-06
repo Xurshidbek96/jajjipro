@@ -7,6 +7,11 @@ active
 
 @section('content')
 <section class="section">
+    @if ($message = Session::get('success'))
+        <div class="alert alert-success">
+            <p>{{ $message }} , {{ Auth::user()->name }}</p>
+        </div>
+    @endif
     <div class="row ">
       <div class="col-xl-3 col-lg-6 col-md-6 col-sm-6 col-xs-12">
         <div class="card">
@@ -98,7 +103,7 @@ active
         </div>
       </div>
     </div>
-    
+
   </section>
 
 @endsection
