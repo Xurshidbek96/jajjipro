@@ -24,7 +24,7 @@ class PostStoreRequest extends FormRequest
     public function rules()
     {
         return [
-            'name' =>'required',
+            'name_uz' =>'required',
             'img' => 'mimes:png,jpg|max:2048',
         ];
     }
@@ -32,7 +32,7 @@ class PostStoreRequest extends FormRequest
     public function messages()
     {
         return [
-            'name.required' =>'Post nomi bo`lishi shart',
+            'name_uz.required' =>'Post nomi bo`lishi shart',
             'img' => 'mimes:png,jpg|max:2048',
         ];
     }

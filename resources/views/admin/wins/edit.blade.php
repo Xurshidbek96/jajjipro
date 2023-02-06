@@ -33,16 +33,30 @@
                 @method('PUT')
 
               <div class="form-group row mb-4">
-                <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3">Name</label>
+                <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3">Nomi uz</label>
                 <div class="col-sm-12 col-md-7">
-                  <input type="text" class="form-control" name="name" value="{{ $win->name }}">
+                  <input type="text" class="form-control" name="name_uz" value="{{ $win->name_uz }}">
                 </div>
               </div>
 
               <div class="form-group row mb-4">
-                <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3">Ta'rif</label>
+                <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3">Nomi en</label>
                 <div class="col-sm-12 col-md-7">
-                  <textarea class="summernote" name="title" value="{{ $win->title }}">{!! $win->title !!}</textarea>
+                  <input type="text" class="form-control" name="name_en" value="{{ $win->name_en }}">
+                </div>
+              </div>
+
+              <div class="form-group row mb-4">
+                <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3">Ta'rif uz</label>
+                <div class="col-sm-12 col-md-7">
+                  <textarea class="summernote" name="title_uz" value="{{ $win->title_uz }}">{!! $win->title_uz !!}</textarea>
+                </div>
+              </div>
+
+              <div class="form-group row mb-4">
+                <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3">Ta'rif en</label>
+                <div class="col-sm-12 col-md-7">
+                  <textarea class="summernote" name="title_en" value="{{ $win->title_en }}">{!! $win->title_en !!}</textarea>
                 </div>
               </div>
 

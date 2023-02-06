@@ -33,16 +33,30 @@
                 @method('PUT')
 
               <div class="form-group row mb-4">
-                <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3">Name</label>
+                <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3">Name Uz</label>
                 <div class="col-sm-12 col-md-7">
-                  <input type="text" class="form-control" name="name" value="{{ $group->name }}">
+                  <input type="text" class="form-control" name="name_uz" value="{{ $group->name_uz }}">
                 </div>
               </div>
 
               <div class="form-group row mb-4">
-                <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3">Ta'rif</label>
+                <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3">Name En</label>
                 <div class="col-sm-12 col-md-7">
-                  <textarea class="summernote" name="title" value="{{ $group->title }}">{!! $group->title !!}</textarea>
+                  <input type="text" class="form-control" name="name_en" value="{{ $group->name_en }}">
+                </div>
+              </div>
+
+              <div class="form-group row mb-4">
+                <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3">Ta'rif Uz</label>
+                <div class="col-sm-12 col-md-7">
+                  <textarea class="summernote" name="title_uz" value="{{ $group->title_uz }}">{!! $group->title_uz !!}</textarea>
+                </div>
+              </div>
+
+              <div class="form-group row mb-4">
+                <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3">Ta'rif Uz</label>
+                <div class="col-sm-12 col-md-7">
+                  <textarea class="summernote" name="title_en" value="{{ $group->title_en }}">{!! $group->title_en !!}</textarea>
                 </div>
               </div>
 

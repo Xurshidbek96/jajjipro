@@ -20,14 +20,25 @@ active
               <div class="table-responsive">
                 <table class="table table-striped" id="table-1">
                   <thead>
+
                     <tr>
-                        <td>Ismi : </td>
-                        <td><b>{{ $group->name }}</b></td>
+                        <td>Ismi UZ : </td>
+                        <td><b>{{ $group->name_uz }}</b></td>
                     </tr>
 
                     <tr>
-                        <td>Ta'rif : </td>
-                        <td><b>{!! $group->title !!}</b></td>
+                        <td>Ismi En : </td>
+                        <td><b>{{ $group->name_en }}</b></td>
+                    </tr>
+
+                    <tr>
+                        <td>Ta'rif UZ: </td>
+                        <td><b>{!! $group->title_uz !!}</b></td>
+                    </tr>
+
+                    <tr>
+                        <td>Ta'rif En: </td>
+                        <td><b>{!! $group->title_en !!}</b></td>
                     </tr>
 
                     <tr>

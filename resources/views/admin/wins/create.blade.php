@@ -32,17 +32,32 @@
                 @csrf
 
               <div class="form-group row mb-4">
-                <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3">yutuq Nomi</label>
+                <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3">yutuq Nomi Uz</label>
                 <div class="col-sm-12 col-md-7">
-                  <input type="text" class="form-control" name="name" value="{{ old('name') }}">
-                   @error('name') <div class="alert alert-danger">{{ $message }}</div> @enderror
+                  <input type="text" class="form-control" name="name_uz" value="{{ old('name_uz') }}">
+                   @error('name_uz') <div class="alert alert-danger">{{ $message }}</div> @enderror
                 </div>
               </div>
 
               <div class="form-group row mb-4">
-                <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3">Ta'rif</label>
+                <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3">yutuq Nomi EN</label>
                 <div class="col-sm-12 col-md-7">
-                  <textarea class="summernote" name="title" value="{{ old('title') }}">{{ old('title') }}</textarea>
+                  <input type="text" class="form-control" name="name_en" value="{{ old('name_en') }}">
+                   @error('name_en') <div class="alert alert-danger">{{ $message }}</div> @enderror
+                </div>
+              </div>
+
+              <div class="form-group row mb-4">
+                <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3">Ta'rif Uz</label>
+                <div class="col-sm-12 col-md-7">
+                  <textarea class="summernote" name="title_uz" value="{{ old('title_uz') }}">{{ old('title_uz') }}</textarea>
+                </div>
+              </div>
+
+              <div class="form-group row mb-4">
+                <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3">Ta'rif En</label>
+                <div class="col-sm-12 col-md-7">
+                  <textarea class="summernote" name="title_en" value="{{ old('title_en') }}">{{ old('title_en') }}</textarea>
                 </div>
               </div>
 

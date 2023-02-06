@@ -63,7 +63,12 @@
             <p class="section-title px-5"><span class="px-2">Bizning o'qituvchilarimiz</span></p>
             <h1 class="mb-4">O'qituvchilarimiz bilan tanishing</h1>
         </div>
-        @include('sections.teachers')
+        <div class="row">
+            @foreach ($teachers as $item)
+                @include('sections.teachers')
+            @endforeach
+        </div>
+
     </div>
 </div>
 <!-- Team End -->

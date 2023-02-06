@@ -28,9 +28,9 @@ active
                       <th class="text-center">
                         #
                       </th>
-                      <th>Ismi</th>
+                      <th>Ismi Uz</th>
                       <th>Rasmi</th>
-                      <th>Kasbi</th>
+                      <th>Kasbi Uz</th>
                       <th>Action</th>
                     </tr>
                   </thead>
@@ -46,12 +46,12 @@ active
                         <td>
                           {{ ++$loop->index }}
                         </td>
-                        <td>{{ $teacher->name }}</td>
+                        <td>{{ $teacher->name_uz }}</td>
 
                         <td>
                           <img alt="image" src="/images/{{ $teacher->img }}" width="59">
                         </td>
-                        <td>{{ $teacher->profession }}</td>
+                        <td>{{ $teacher->profession_uz }}</td>
 
                         <td>
                         <form action="{{ route('teachers.destroy', $teacher->id) }}" method="POST">

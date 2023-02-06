@@ -5,90 +5,38 @@
             <h1 class="mb-4">@lang('groups.g1')</h1>
         </div>
         <div class="row">
-            <div class="col-lg-4 mb-5">
-                <div class="card border-0 bg-light shadow-sm pb-2">
-                    <img class="card-img-top mb-2" src="/assets/img/class-1.jpg" alt="">
-                    <div class="card-body text-center">
-                        <h4 class="card-title">Group Bugirsoq</h4>
-                        <p class="card-text">Justo ea diam stet diam ipsum no sit, ipsum vero et et diam ipsum duo et no et, ipsum ipsum erat duo amet clita duo</p>
+            @foreach ($groups as $item)
+                <div class="col-lg-4 mb-5">
+                    <div class="card border-0 bg-light shadow-sm pb-2">
+                        <img class="card-img-top mb-2" src="/images/{{ $item['img'] }}" alt="">
+                        <div class="card-body text-center">
+                            <h4 class="card-title">{{ $item['name_'.\App::getLocale()] }}</h4>
+                            <p class="card-text">{!! $item['title_'.\App::getLocale()] !!}</p>
+                        </div>
+                        <div class="card-footer bg-transparent py-4 px-5">
+                            <div class="row border-bottom">
+                                <div class="col-6 py-1 text-right border-right"><strong>@lang('groups.g6')</strong></div>
+                                <div class="col-6 py-1">{{ $item['age'] }}</div>
+                            </div>
+                            <div class="row border-bottom">
+                                <div class="col-6 py-1 text-right border-right"><strong>@lang('groups.g7')</strong></div>
+                                <div class="col-6 py-1">{{ $item['seat'] }}</div>
+                            </div>
+                            <div class="row border-bottom">
+                                <div class="col-6 py-1 text-right border-right"><strong>@lang('groups.g8')</strong></div>
+                                <div class="col-6 py-1">{{ $item['time'] }}</div>
+                            </div>
+                            <div class="row">
+                                <div class="col-6 py-1 text-right border-right"><strong>@lang('groups.g9')</strong></div>
+                                <div class="col-6 py-1">{{ $item['payment'] }}</div>
+                            </div>
+                        </div>
+                        <a href="tel:+998996111300" class="btn btn-primary px-4 mx-auto mb-4">@lang('groups.g10')</a>
                     </div>
-                    <div class="card-footer bg-transparent py-4 px-5">
-                        <div class="row border-bottom">
-                            <div class="col-6 py-1 text-right border-right"><strong>Bolalar yoshi</strong></div>
-                            <div class="col-6 py-1">3 - 4 yosh</div>
-                        </div>
-                        <div class="row border-bottom">
-                            <div class="col-6 py-1 text-right border-right"><strong>Jami o'rindiqlar</strong></div>
-                            <div class="col-6 py-1">40 o'rindiq</div>
-                        </div>
-                        <div class="row border-bottom">
-                            <div class="col-6 py-1 text-right border-right"><strong>Dars vaqti</strong></div>
-                            <div class="col-6 py-1">08:00 - 17:00</div>
-                        </div>
-                        <div class="row">
-                            <div class="col-6 py-1 text-right border-right"><strong>Oylik to'lov</strong></div>
-                            <div class="col-6 py-1">350 000 / Oy</div>
-                        </div>
-                    </div>
-                    <a href="tel:+998996111300" class="btn btn-primary px-4 mx-auto mb-4">Hoziroq qo'shil</a>
                 </div>
-            </div>
-            <div class="col-lg-4 mb-5">
-                <div class="card border-0 bg-light shadow-sm pb-2">
-                    <img class="card-img-top mb-2" src="/assets/img/class-2.jpg" alt="">
-                    <div class="card-body text-center">
-                        <h4 class="card-title">Group Alpomish</h4>
-                        <p class="card-text">Justo ea diam stet diam ipsum no sit, ipsum vero et et diam ipsum duo et no et, ipsum ipsum erat duo amet clita duo</p>
-                    </div>
-                    <div class="card-footer bg-transparent py-4 px-5">
-                        <div class="row border-bottom">
-                            <div class="col-6 py-1 text-right border-right"><strong>Bolalar yoshi</strong></div>
-                            <div class="col-6 py-1">4 - 5 yosh</div>
-                        </div>
-                        <div class="row border-bottom">
-                            <div class="col-6 py-1 text-right border-right"><strong>Jami o'rindiqlar</strong></div>
-                            <div class="col-6 py-1">40 o'rindiq</div>
-                        </div>
-                        <div class="row border-bottom">
-                            <div class="col-6 py-1 text-right border-right"><strong>Dars vaqti</strong></div>
-                            <div class="col-6 py-1">08:00 - 17:00</div>
-                        </div>
-                        <div class="row">
-                            <div class="col-6 py-1 text-right border-right"><strong>Oylik to'lov</strong></div>
-                            <div class="col-6 py-1">350 000 / Oy</div>
-                        </div>
-                    </div>
-                    <a href="tel:+998996111300" class="btn btn-primary px-4 mx-auto mb-4">Hoziroq qo'shil</a>
-                </div>
-            </div>
-            <div class="col-lg-4 mb-5">
-                <div class="card border-0 bg-light shadow-sm pb-2">
-                    <img class="card-img-top mb-2" src="/assets/img/class-3.jpg" alt="">
-                    <div class="card-body text-center">
-                        <h4 class="card-title">Group Profesor</h4>
-                        <p class="card-text">Justo ea diam stet diam ipsum no sit, ipsum vero et et diam ipsum duo et no et, ipsum ipsum erat duo amet clita duo</p>
-                    </div>
-                    <div class="card-footer bg-transparent py-4 px-5">
-                        <div class="row border-bottom">
-                            <div class="col-6 py-1 text-right border-right"><strong>Bolalar yoshi</strong></div>
-                            <div class="col-6 py-1">5 - 6 yosh</div>
-                        </div>
-                        <div class="row border-bottom">
-                            <div class="col-6 py-1 text-right border-right"><strong>Jami o'rindiqlar</strong></div>
-                            <div class="col-6 py-1">40 o'rindiq</div>
-                        </div>
-                        <div class="row border-bottom">
-                            <div class="col-6 py-1 text-right border-right"><strong>Dars vaqti</strong></div>
-                            <div class="col-6 py-1">08:00 - 17:00</div>
-                        </div>
-                        <div class="row">
-                            <div class="col-6 py-1 text-right border-right"><strong>Oylik to'lov</strong></div>
-                            <div class="col-6 py-1">350 000 / Oy</div>
-                        </div>
-                    </div>
-                    <a href="tel:+998996111300" class="btn btn-primary px-4 mx-auto mb-4">Hoziroq qo'shil</a>
-                </div>
-            </div>
+            @endforeach
+
+
         </div>
     </div>
 </div>

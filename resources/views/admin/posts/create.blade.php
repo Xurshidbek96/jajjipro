@@ -32,10 +32,18 @@
                 @csrf
 
               <div class="form-group row mb-4">
-                <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3">Post Nomi</label>
+                <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3">Post Nomi Uz</label>
                 <div class="col-sm-12 col-md-7">
-                  <input type="text" class="form-control" name="name" value="{{ old('name') }}">
-                   @error('name') <div class="alert alert-danger">{{ $message }}</div> @enderror
+                  <input type="text" class="form-control" name="name_uz" value="{{ old('name_uz') }}">
+                   @error('name_uz') <div class="alert alert-danger">{{ $message }}</div> @enderror
+                </div>
+              </div>
+
+              <div class="form-group row mb-4">
+                <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3">Post Nomi En</label>
+                <div class="col-sm-12 col-md-7">
+                  <input type="text" class="form-control" name="name_en" value="{{ old('name_en') }}">
+                   @error('name_en') <div class="alert alert-danger">{{ $message }}</div> @enderror
                 </div>
               </div>
 
@@ -44,25 +52,41 @@
                 <div class="col-sm-12 col-md-7">
                   <select class="form-control selectric" name="category_id">
                     @foreach ($categories as $item)
-                        <option value="{{ $item->id }}">{{ $item->name }}</option>
+                        <option value="{{ $item->id }}">{{ $item->name_uz }}</option>
                     @endforeach
                   </select>
                 </div>
               </div>
 
               <div class="form-group row mb-4">
-                <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3">Mazmuni</label>
+                <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3">Mazmuni UZ</label>
                 <div class="col-sm-12 col-md-7">
-                  <textarea class="summernote" name="info" value="{{ old('info') }}">{{ old('info') }}</textarea>
-                  @error('info') <div class="alert alert-danger">{{ $message }}</div> @enderror
+                  <textarea class="summernote" name="info_uz" value="{{ old('info_uz') }}">{{ old('info_uz') }}</textarea>
+                  @error('info_uz') <div class="alert alert-danger">{{ $message }}</div> @enderror
                 </div>
               </div>
 
               <div class="form-group row mb-4">
-                <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3">Muallif</label>
+                <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3">Mazmuni EN</label>
                 <div class="col-sm-12 col-md-7">
-                  <input type="text" class="form-control" name="owner" value="{{ old('owner') }}">
-                   @error('owner') <div class="alert alert-danger">{{ $message }}</div> @enderror
+                  <textarea class="summernote" name="info_en" value="{{ old('info_en') }}">{{ old('info_en') }}</textarea>
+                  @error('info_en') <div class="alert alert-danger">{{ $message }}</div> @enderror
+                </div>
+              </div>
+
+              <div class="form-group row mb-4">
+                <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3">Muallif Uz</label>
+                <div class="col-sm-12 col-md-7">
+                  <input type="text" class="form-control" name="owner_uz" value="{{ old('owner_uz') }}">
+                   @error('owner_uz') <div class="alert alert-danger">{{ $message }}</div> @enderror
+                </div>
+              </div>
+
+              <div class="form-group row mb-4">
+                <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3">Muallif En</label>
+                <div class="col-sm-12 col-md-7">
+                  <input type="text" class="form-control" name="owner_en" value="{{ old('owner_en') }}">
+                   @error('owner_en') <div class="alert alert-danger">{{ $message }}</div> @enderror
                 </div>
               </div>
 

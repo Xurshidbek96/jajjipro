@@ -24,19 +24,19 @@ class TeacherStoreRequest extends FormRequest
     public function rules()
     {
         return [
-            'name' => 'required|max:60|min:30',
-            'profession' => 'required|max:30'
+            'name_uz' => 'required|max:60',
+            'profession_uz' => 'required'
         ];
     }
 
     public function messages()
     {
         return [
-            'name.required' => 'F.I.SH kiritilishi shart',
-            'name.min' => 'F.I.SH eng kamida 30 ta belgidan iborat bo`lsin',
-            'name.max' => 'F.I.SH 60 ta belgidan oshmasin',
-            'profession.required' => 'Kasb maydoni to`ldirilsin',
-            'profession.max' => 'Kasb maydoni 30 ta belgidan oshmasin'
+            'name_uz.required' => 'F.I.SH kiritilishi shart',
+            'name_uz.min' => 'F.I.SH eng kamida 30 ta belgidan iborat bo`lsin',
+            'name_uz.max' => 'F.I.SH 60 ta belgidan oshmasin',
+            'profession_uz.required' => 'Kasb maydoni to`ldirilsin',
+            'profession_uz.max' => 'Kasb maydoni 30 ta belgidan oshmasin'
         ];
     }
 }

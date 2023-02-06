@@ -15,8 +15,10 @@ return new class extends Migration
     {
         Schema::create('groups', function (Blueprint $table) {
             $table->id();
-            $table->string('name')->nullable();
-            $table->text('title')->nullable();
+            $table->string('name_uz')->nullable();
+            $table->string('name_en')->nullable();
+            $table->text('title_uz')->nullable();
+            $table->text('title_en')->nullable();
             $table->string('age')->nullable();
             $table->bigInteger('seat')->nullable();
             $table->string('time')->nullable();

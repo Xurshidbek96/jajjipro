@@ -22,23 +22,34 @@ active
                   <thead>
 
                     <tr>
-                        <td>Ismi : </td>
-                        <td><b>{{ $teacher->name }}</b></td>
+                        <td>Ismi Uz : </td>
+                        <td><b>{{ $teacher->name_uz }}</b></td>
                     </tr>
 
                     <tr>
-                        <td>Kasbi : </td>
-                        <td><b>{{ $teacher->profession }}</b></td>
+                        <td>Ismi En : </td>
+                        <td><b>{{ $teacher->name_en }}</b></td>
                     </tr>
 
                     <tr>
-                        <td>Ismi : </td>
-                        <td><b>{{ $teacher->name }}</b></td>
+                        <td>Kasbi Uz : </td>
+                        <td><b>{{ $teacher->profession_uz }}</b></td>
+                    </tr>
+
+                    <tr>
+                        <td>Kasbi En : </td>
+                        <td><b>{{ $teacher->profession_en }}</b></td>
                     </tr>
 
                     <tr>
                         <td>Tg Link : </td>
                         <td><b>{{ $teacher->tg_link }}</b></td>
+                    </tr>
+
+                    <tr>
+                        <td>Status : </td>
+                        <td><b>@if($teacher->status == 1){{ 'Rahbariyat' }}
+                            @else{{ 'O`qituvchi' }}@endif</b></td>
                     </tr>
 
                     <tr>

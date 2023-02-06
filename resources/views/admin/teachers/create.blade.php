@@ -31,19 +31,37 @@
               <form action="{{ route('teachers.store') }}" method="POST" enctype="multipart/form-data">
                 @csrf
               <div class="form-group row mb-4">
-                <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3">Name</label>
+                <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3">Ismi Uz</label>
                 <div class="col-sm-12 col-md-7">
-                  <input type="text" class="form-control" name="name" value="{{ old('name') }}">
-                  @error('name') <div class="alert alert-danger">{{ $message }}</div> @enderror
+                  <input type="text" class="form-control" name="name_uz" value="{{ old('name_uz') }}">
+                  @error('name_uz') <div class="alert alert-danger">{{ $message }}</div> @enderror
                 </div>
               </div>
+
               <div class="form-group row mb-4">
-                <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3">Profession</label>
+                <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3">Name En</label>
                 <div class="col-sm-12 col-md-7">
-                  <input type="text" class="form-control" name="profession">
-                  @error('profession') <div class="alert alert-danger">{{ $message }}</div> @enderror
+                  <input type="text" class="form-control" name="name_en" value="{{ old('name_en') }}">
+                  @error('name_en') <div class="alert alert-danger">{{ $message }}</div> @enderror
                 </div>
               </div>
+
+              <div class="form-group row mb-4">
+                <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3">Kasbi uz</label>
+                <div class="col-sm-12 col-md-7">
+                  <input type="text" class="form-control" name="profession_uz" value="{{ old('profession_uz') }}">
+                  @error('profession_uz') <div class="alert alert-danger">{{ $message }}</div> @enderror
+                </div>
+              </div>
+
+              <div class="form-group row mb-4">
+                <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3">Profession En</label>
+                <div class="col-sm-12 col-md-7">
+                  <input type="text" class="form-control" name="profession_en" value="{{ old('profession_en') }}">
+                  @error('profession_en') <div class="alert alert-danger">{{ $message }}</div> @enderror
+                </div>
+              </div>
+
               <div class="form-group row mb-4">
                 <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3">Tg link</label>
                 <div class="col-sm-12 col-md-7">

@@ -15,8 +15,10 @@ return new class extends Migration
     {
         Schema::create('teachers', function (Blueprint $table) {
             $table->id();
-            $table->string('name')->nullable();
-            $table->string('profession')->nullable();
+            $table->string('name_uz')->nullable();
+            $table->string('name_en')->nullable();
+            $table->string('profession_uz')->nullable();
+            $table->string('profession_en')->nullable();
             $table->string('img')->nullable();
             $table->string('tg_link')->nullable();
             $table->integer('status')->nullable();

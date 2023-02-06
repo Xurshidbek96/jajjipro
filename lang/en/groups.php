@@ -6,4 +6,9 @@ return [
     'g3' => 'Book a place for your child',
     'g4' => 'Your phone',
     'g5' => 'Select a class',
+    'g6' => 'Children`s age',
+    'g7' => 'Total seats',
+    'g8' => 'Lesson time',
+    'g9' => 'Monthly payment',
+    'g10' => 'Join now',
 ];

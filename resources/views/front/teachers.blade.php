@@ -23,13 +23,22 @@
         <div class="text-center pb-2">
             <p class="section-title px-5"><span class="px-2">@lang('teachers.t2')</span></p>
         </div>
-        @include('sections.teachers')
+        <div class="row">
+            @foreach ($teachers1 as $item)
+                @include('sections.teachers')
+            @endforeach
+        </div>
+
         <div class="text-center pb-2">
             <p class="section-title px-5"><span class="px-2">@lang('teachers.t1')</span></p>
             <h1 class="mb-4">@lang('teachers.t3')</h1>
         </div>
-        @include('sections.teachers')
-        @include('sections.teachers')
+        <div class="row">
+            @foreach ($teachers2 as $item)
+                @include('sections.teachers')
+            @endforeach
+        </div>
+        {{ $teachers2->links() }}
     </div>
 </div>
 <!-- Team End -->

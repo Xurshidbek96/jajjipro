@@ -10,6 +10,7 @@ use App\Http\Controllers\Admin\CategoryController;
 use App\Http\Controllers\Admin\PostController;
 use App\Http\Controllers\Admin\HumanController;
 use App\Http\Controllers\Admin\NumberController;
+use App\Http\Controllers\Admin\CommentController;
 
 /*
 |--------------------------------------------------------------------------
@@ -52,5 +53,6 @@ Route::prefix('admin/')->group(function(){
     Route::resource('posts', PostController::class);
     Route::resource('humans', HumanController::class);
     Route::resource('numbers', NumberController::class);
+    Route::resource('comments', CommentController::class);
 
 });

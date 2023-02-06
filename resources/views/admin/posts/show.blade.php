@@ -21,23 +21,38 @@ active
                 <table class="table table-striped" id="table-1">
                   <thead>
                     <tr>
-                        <td>Nomi : </td>
-                        <td><b>{{ $post->name }}</b></td>
+                        <td>Nomi UZ: </td>
+                        <td><b>{{ $post->name_uz }}</b></td>
                     </tr>
 
                     <tr>
-                        <td>Nomi : </td>
-                        <td><b>{{ $post->category->name }}</b></td>
+                        <td>Nomi EN: </td>
+                        <td><b>{{ $post->name_en }}</b></td>
                     </tr>
 
                     <tr>
-                        <td>Ma'lumotlar : </td>
-                        <td><b>{!! $post->info !!}</b></td>
+                        <td>Kategoriyasi UZ : </td>
+                        <td><b>{{ $post->category->name_uz }}</b></td>
                     </tr>
 
                     <tr>
-                        <td>Muallif : </td>
-                        <td><b>{{ $post->owner }}</b></td>
+                        <td>Ma'lumotlar UZ: </td>
+                        <td><b>{!! $post->info_uz !!}</b></td>
+                    </tr>
+
+                    <tr>
+                        <td>Ma'lumotlar EN: </td>
+                        <td><b>{!! $post->info_en !!}</b></td>
+                    </tr>
+
+                    <tr>
+                        <td>Muallif UZ: </td>
+                        <td><b>{{ $post->owner_uz }}</b></td>
+                    </tr>
+
+                    <tr>
+                        <td>Muallif EN: </td>
+                        <td><b>{{ $post->owner_en }}</b></td>
                     </tr>
 
                     <tr>

@@ -24,8 +24,8 @@ class GroupStoreRequest extends FormRequest
     public function rules()
     {
         return [
-            'name' => 'required',
-            'age' => 'required|min:3',
+            'name_uz' => 'required',
+            'age' => 'required',
             'seat' => 'numeric',
             'img' =>'mimes:png,jpg,svg|max:2048'
         ];
@@ -33,9 +33,8 @@ class GroupStoreRequest extends FormRequest
 
     public function messages(){
         return[
-            'name.required' => 'Guruh nomi to`ldirilsin',
+            'name_uz.required' => 'Guruh nomi to`ldirilsin',
             'age.required' => 'Yosh kiritilishi shart !',
-            'age.min' => 'Yosh maydoni kamida 3 ta belgidan iborat bo`lsin !',
             'img.mimes' => 'fayl turlari png, jgp, svg bo`lishi kerak !',
             'img.max' => 'fayl hajmi 2048 kb dan yuqori ',
             'seat' => 'joylar soni faqat raqam kiritilsin !'

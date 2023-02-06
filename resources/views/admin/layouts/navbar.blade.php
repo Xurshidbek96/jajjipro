@@ -27,6 +27,10 @@
         <a href="{{ route('posts.index') }}" ><i
             data-feather="briefcase"></i><span>Maqolalar</span></a>
     </li>
+    <li class="dropdown @yield('comments')">
+        <a href="{{ route('comments.index') }}" ><i
+            data-feather="briefcase"></i><span>Izohlar</span></a>
+    </li>
     <li class="dropdown">
         <a href="#" ><i
             data-feather="briefcase"></i><span></span></a>

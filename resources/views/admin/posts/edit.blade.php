@@ -33,9 +33,16 @@
                 @method('PUT')
 
               <div class="form-group row mb-4">
-                <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3">Name</label>
+                <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3">Name UZ</label>
                 <div class="col-sm-12 col-md-7">
-                  <input type="text" class="form-control" name="name" value="{{ $post->name }}">
+                  <input type="text" class="form-control" name="name_uz" value="{{ $post->name_uz }}">
+                </div>
+              </div>
+
+              <div class="form-group row mb-4">
+                <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3">Name EN</label>
+                <div class="col-sm-12 col-md-7">
+                  <input type="text" class="form-control" name="name_en" value="{{ $post->name_en }}">
                 </div>
               </div>
 
@@ -43,10 +50,10 @@
                 <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3">Katgoriyasi</label>
                 <div class="col-sm-12 col-md-7">
                   <select class="form-control selectric" name="category_id">
-                    <option value="{{ $post->category->id }}">{{ $post->category->name }}</option>
+                    <option value="{{ $post->category->id }}">{{ $post->category->name_uz }}</option>
                     @foreach ($categories as $item)
                         @if($item->id != $post->category_id)
-                            <option value="{{ $item->id }}">{{ $item->name }}</option>
+                            <option value="{{ $item->id }}">{{ $item->name_uz }}</option>
                         @endif
                     @endforeach
                   </select>
@@ -54,18 +61,34 @@
               </div>
 
               <div class="form-group row mb-4">
-                <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3">Ma'lumotlar</label>
+                <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3">Ma'lumotlar uz</label>
                 <div class="col-sm-12 col-md-7">
-                  <textarea class="summernote" name="info" value="{!! $post->info !!}">{!! $post->info !!}</textarea>
-                  @error('info') <div class="alert alert-danger">{{ $message }}</div> @enderror
+                  <textarea class="summernote" name="info_uz" value="{!! $post->info_uz !!}">{!! $post->info_uz !!}</textarea>
+                  @error('info_uz') <div class="alert alert-danger">{{ $message }}</div> @enderror
                 </div>
               </div>
 
               <div class="form-group row mb-4">
-                <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3">Muallif</label>
+                <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3">Ma'lumotlar en</label>
                 <div class="col-sm-12 col-md-7">
-                  <input type="text" class="form-control" name="owner" value="{{ $post->owner }}">
-                   @error('owner') <div class="alert alert-danger">{{ $message }}</div> @enderror
+                  <textarea class="summernote" name="info_en" value="{!! $post->info_en !!}">{!! $post->info_en !!}</textarea>
+                  @error('info_en') <div class="alert alert-danger">{{ $message }}</div> @enderror
+                </div>
+              </div>
+
+              <div class="form-group row mb-4">
+                <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3">Muallif uz</label>
+                <div class="col-sm-12 col-md-7">
+                  <input type="text" class="form-control" name="owner_uz" value="{{ $post->owner_uz }}">
+                   @error('owner_uz') <div class="alert alert-danger">{{ $message }}</div> @enderror
+                </div>
+              </div>
+
+              <div class="form-group row mb-4">
+                <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3">Muallif En</label>
+                <div class="col-sm-12 col-md-7">
+                  <input type="text" class="form-control" name="owner_en" value="{{ $post->owner_en }}">
+                   @error('owner_en') <div class="alert alert-danger">{{ $message }}</div> @enderror
                 </div>
               </div>
 

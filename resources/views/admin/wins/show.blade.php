@@ -21,13 +21,23 @@ active
                 <table class="table table-striped" id="table-1">
                   <thead>
                     <tr>
-                        <td>Ismi : </td>
-                        <td><b>{{ $win->name }}</b></td>
+                        <td>Yutuq nomi uz : </td>
+                        <td><b>{{ $win->name_uz }}</b></td>
                     </tr>
 
                     <tr>
-                        <td>Ta'rif : </td>
-                        <td><b>{!! $win->title !!}</b></td>
+                        <td>Yutuq nomi En : </td>
+                        <td><b>{{ $win->name_en }}</b></td>
+                    </tr>
+
+                    <tr>
+                        <td>Ta'rif Uz: </td>
+                        <td><b>{!! $win->title_uz !!}</b></td>
+                    </tr>
+
+                    <tr>
+                        <td>Ta'rif En: </td>
+                        <td><b>{!! $win->title_en !!}</b></td>
                     </tr>
 
                     <tr>

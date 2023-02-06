@@ -28,7 +28,7 @@ active
                       <th class="text-center">
                         #
                       </th>
-                      <th>Sinf nomi</th>
+                      <th>Sinf nomi Uz</th>
                       <th>Yosh</th>
                       <th>Joylar</th>
                       <th>Rasm</th>
@@ -47,7 +47,7 @@ active
                         <td>
                           {{ ++$loop->index }}
                         </td>
-                        <td>{{ $group->name }}</td>
+                        <td>{{ $group->name_uz }}</td>
                         <td>{{ $group->age }}</td>
                         <td>{{ $group->seat }}</td>
                         <td>

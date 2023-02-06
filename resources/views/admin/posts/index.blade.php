@@ -28,8 +28,8 @@ active
                       <th class="text-center">
                         #
                       </th>
-                      <th>Maqola nomi</th>
-                      <th>Kategoriyasi</th>
+                      <th>Maqola nomi UZ</th>
+                      <th>Kategoriyasi UZ</th>
                       <th>Rasm</th>
                       <th>Action</th>
                     </tr>
@@ -46,8 +46,8 @@ active
                         <td>
                           {{ ++$loop->index }}
                         </td>
-                        <td>{{ $item->name }}</td>
-                        <td>{{ $item->category->name }}</td>
+                        <td>{{ $item->name_uz }}</td>
+                        <td>{{ $item->category->name_uz ?? 'Bog`lanmagan' }}</td>
                         <td>
                           <img alt="image" src="/images/{{ $item->img }}" width="59">
                         </td>

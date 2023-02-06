@@ -31,18 +31,35 @@
               <form action="{{ route('teachers.update', $teacher->id) }}" method="POST" enctype="multipart/form-data">
                 @csrf
                 @method('PUT')
+
               <div class="form-group row mb-4">
-                <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3">Name</label>
+                <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3">Ismi UZ</label>
                 <div class="col-sm-12 col-md-7">
-                  <input type="text" class="form-control" name="name" value="{{ $teacher->name }}">
+                  <input type="text" class="form-control" name="name_uz" value="{{ $teacher->name_uz }}">
                 </div>
               </div>
+
               <div class="form-group row mb-4">
-                <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3">Profession</label>
+                <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3">Ismi EN</label>
                 <div class="col-sm-12 col-md-7">
-                  <input type="text" class="form-control" name="profession" value="{{ $teacher->profession }}">
+                  <input type="text" class="form-control" name="name_en" value="{{ $teacher->name_en }}">
                 </div>
               </div>
+
+              <div class="form-group row mb-4">
+                <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3">Kasbi UZ</label>
+                <div class="col-sm-12 col-md-7">
+                  <input type="text" class="form-control" name="profession_uz" value="{{ $teacher->profession_uz }}">
+                </div>
+              </div>
+
+              <div class="form-group row mb-4">
+                <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3">Kasbi En</label>
+                <div class="col-sm-12 col-md-7">
+                  <input type="text" class="form-control" name="profession_en" value="{{ $teacher->profession_en }}">
+                </div>
+              </div>
+
               <div class="form-group row mb-4">
                 <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3">Tg Link</label>
                 <div class="col-sm-12 col-md-7">
@@ -68,7 +85,7 @@
               </div>
 
               <div class="form-group row mb-4">
-                <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3">Thumbnail</label>
+                <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3">Rasm</label>
                 <div class="col-sm-12 col-md-7">
                   <div id="image-preview" class="image-preview">
                     <label for="image-upload" id="image-label">Choose File</label>

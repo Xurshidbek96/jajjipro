@@ -24,8 +24,8 @@ class WinStoreRequest extends FormRequest
     public function rules()
     {
         return [
-            'name'=>'required',
-            'title'=>'min:20|required',
+            'name_uz'=>'required',
+            'title_uz'=>'min:20|required',
             'img' => 'mimes:png,jpg|max:2048'
         ];
     }
@@ -33,9 +33,9 @@ class WinStoreRequest extends FormRequest
     public function attributes()
     {
         return [
-            'name'=>'yutuq nomi',
-            'title'=>'ta`rif',
-            'img' => 'Rasm'
+            'name_uz'=>'yutuq nomi kiritilsin',
+            'title_uz'=>'ta`rif kiritilsin',
+            'img' => 'Rasm kiritilsin'
         ];
     }
 }

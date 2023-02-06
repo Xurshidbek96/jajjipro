@@ -19,5 +19,10 @@
 
 <!-- Blog Start -->
 @include('sections.blogs')
+<div class="col-md-12 mb-4">
+    <nav aria-label="Page navigation">
+     {{ $posts->links() }}
+    </nav>
+</div>
 <!-- Blog End -->
 @endsection
