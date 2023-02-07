@@ -1,6 +1,6 @@
 @extends('admin.layouts.layout')
 
-@section('wins')
+@section('categories')
 active
 @endsection
 
@@ -22,7 +22,7 @@ active
                   <thead>
                     <tr>
                         <td>Nomi : </td>
-                        <td><b>{{ $category->name }}</b></td>
+                        <td><b>{{ $category->name_uz }}</b></td>
                     </tr>
 
                     <tr>
@@ -31,7 +31,7 @@ active
                         <td>
                             <ul>
                                 @foreach ($category->posts as $c)
-                                    <li><b><a href="{{ route('posts.show', $c->id) }}">{{ $c->name }}</a></b></li><br>
+                                    <li><b><a href="{{ route('posts.show', $c->id) }}">{{ $c->name_uz }}</a></b></li><br>
                                 @endforeach
                             </ul>
                         </td>

@@ -32,10 +32,18 @@
                 @csrf
 
               <div class="form-group row mb-4">
-                <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3"> Nomi</label>
+                <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3"> Nomi UZ</label>
                 <div class="col-sm-12 col-md-7">
-                  <input type="text" class="form-control" name="name" value="{{ old('name') }}">
-                   @error('name') <div class="alert alert-danger">{{ $message }}</div> @enderror
+                  <input type="text" class="form-control" name="name_uz" value="{{ old('name_uz') }}">
+                   @error('name_uz') <div class="alert alert-danger">{{ $message }}</div> @enderror
+                </div>
+              </div>
+
+              <div class="form-group row mb-4">
+                <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3"> Nomi EN</label>
+                <div class="col-sm-12 col-md-7">
+                  <input type="text" class="form-control" name="name_en" value="{{ old('name_en') }}">
+                   @error('name_en') <div class="alert alert-danger">{{ $message }}</div> @enderror
                 </div>
               </div>
 

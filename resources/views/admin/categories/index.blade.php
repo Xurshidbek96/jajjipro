@@ -28,7 +28,7 @@ active
                       <th class="text-center">
                         #
                       </th>
-                      <th>Nomi</th>
+                      <th>Nomi UZ</th>
 
                       <th>Action</th>
                     </tr>
@@ -45,7 +45,7 @@ active
                         <td>
                           {{ ++$loop->index }}
                         </td>
-                        <td>{{ $item->name }}</td>
+                        <td>{{ $item->name_uz }}</td>
 
                         <td>
                             <form action="{{ route('categories.destroy', $item->id) }}" method="POST">

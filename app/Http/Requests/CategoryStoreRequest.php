@@ -24,15 +24,15 @@ class CategoryStoreRequest extends FormRequest
     public function rules()
     {
         return [
-            'name' =>'required|max:20',
+            'name_uz' =>'required|max:20',
         ];
     }
 
     public function messages()
     {
         return [
-            'name.required' =>'Kategoriya nomi kiritilishi shart',
-            'name.max' =>'Kategoriya 20 ta belgidan oshmasin',
+            'name_uz.required' =>'Kategoriya nomi kiritilishi shart',
+            'name_uz.max' =>'Kategoriya 20 ta belgidan oshmasin',
         ];
     }
 }

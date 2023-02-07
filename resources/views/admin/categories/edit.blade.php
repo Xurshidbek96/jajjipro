@@ -33,9 +33,16 @@
                 @method('PUT')
 
               <div class="form-group row mb-4">
-                <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3">Name</label>
+                <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3">Name UZ</label>
                 <div class="col-sm-12 col-md-7">
-                  <input type="text" class="form-control" name="name" value="{{ $category->name }}">
+                  <input type="text" class="form-control" name="name_uz" value="{{ $category->name_uz }}">
+                </div>
+              </div>
+
+              <div class="form-group row mb-4">
+                <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3">Name EN</label>
+                <div class="col-sm-12 col-md-7">
+                  <input type="text" class="form-control" name="name_en" value="{{ $category->name_en }}">
                 </div>
               </div>
 
